@@ -1,3 +1,5 @@
+# Before running code, decrypt the API key with the following command: openssl enc -d -aes-256-cbc -in environment.enc -out environment
+
 # Weatherapp
 
 There was a beautiful idea of building an app that would show the upcoming weather. The developers wrote a nice backend and a frontend following the latest principles and - to be honest - bells and whistles. However, the developers did not remember to add any information about the infrastructure or even setup instructions in the source code.
