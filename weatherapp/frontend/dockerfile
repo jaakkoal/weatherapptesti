@@ -1,0 +1,11 @@
+# # Frontend container for dockerfile
+
+# Defines the base image
+FROM node:lts-alpine3.13
+
+# Defines the working directory for the application
+WORKDIR /usr/src/app
+
+# Copies the dependency information and installs the package
+COPY package* ./
+RUN npm install
