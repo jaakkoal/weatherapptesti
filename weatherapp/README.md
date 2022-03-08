@@ -1,4 +1,6 @@
-# Before running code, decrypt the API key with the following command: openssl enc -d -aes-256-cbc -in environment.enc -out environment
+# Before running code, decrypt the API key with the following command: 
+
+`openssl enc -d -aes-256-cbc -in environment.enc -out environment`
 
 # Weatherapp
 
