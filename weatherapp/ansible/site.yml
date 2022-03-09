@@ -1,0 +1,37 @@
+- name: Install Docker on Ubuntu
+  become: yes
+  gather_facts: false
+  hosts: all
+
+  tasks:
+    - name: Update APT repositories and install package updates
+      apt:
+        update_cache: yes
+        upgrade: yes
+
+#Test
+    - name: install traceroute
+      apt: 
+        name: traceroute
+        state: present
+
+    - name: install prerequisites
+      apt: 
+        name: ca-certificates, curl, gnupg, lsb-release
+        state: present
+
+    - name: add docker official gpg key
+      shell: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+    - name: Add Docker Repository
+      shell: sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+        
+      
+    - name: install docker engine
+      apt:
+        name: docker-ce, docker-ce-cli, containerd.io
+        update_cache: yes
+
+        
+
+      
